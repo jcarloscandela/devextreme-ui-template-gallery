@@ -81,5 +81,10 @@ export const navigation = [
         path: '/user-profile',
       },
     ]
+  },
+  {
+    text: 'Processes',
+    icon: 'engine',
+    path: '/processes',
   }
 ];
