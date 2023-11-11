@@ -18,7 +18,7 @@ export function getSizeQualifier(width: number) {
   return 'lg';
 }
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class ScreenService {
   @Output() changed = new EventEmitter();
   @Output() xSmallScreenChanged = new ReplaySubject<boolean>();

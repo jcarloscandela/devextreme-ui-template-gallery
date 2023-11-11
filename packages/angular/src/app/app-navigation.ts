@@ -6,11 +6,11 @@ export const navigation = [
     items: [
       {
         text: 'Contact List',
-        path: '/crm-contact-list',
+        path: '/gallery/crm-contact-list',
       },
       {
         text: 'Contact Details',
-        path: '/crm-contact-details',
+        path: '/gallery/crm-contact-details',
       },
     ],
   },
@@ -21,15 +21,15 @@ export const navigation = [
     items: [
       {
         text: 'Task List',
-        path: '/planning-task-list',
+        path: '/gallery/planning-task-list',
       },
       {
         text: 'Task Details',
-        path: '/planning-task-details',
+        path: '/gallery/planning-task-details',
       },
       {
         text: 'Scheduler',
-        path: '/planning-scheduler',
+        path: '/gallery/planning-scheduler',
       },
     ],
   },
@@ -40,15 +40,15 @@ export const navigation = [
     items: [
       {
         text: 'Dashboard',
-        path: '/analytics-dashboard',
+        path: '/gallery/analytics-dashboard',
       },
       {
         text: 'Sales Report',
-        path: '/analytics-sales-report',
+        path: '/gallery/analytics-sales-report',
       },
       {
         text: 'Geography',
-        path: '/analytics-geography',
+        path: '/gallery/analytics-geography',
       },
     ],
   },
@@ -59,15 +59,15 @@ export const navigation = [
     items: [
       {
         text: 'Sign In Form',
-        path: '/sign-in-form',
+        path: '/gallery/sign-in-form',
       },
       {
         text: 'Sign Up Form',
-        path: '/sign-up-form',
+        path: '/gallery/sign-up-form',
       },
       {
         text: 'Reset Password Form',
-        path: '/reset-password-form',
+        path: '/gallery/reset-password-form',
       }
     ],
   },
@@ -78,8 +78,19 @@ export const navigation = [
     items: [
       {
         text: 'User Profile',
-        path: '/user-profile',
+        path: '/gallery/user-profile',
       },
     ]
-  }
+  },
+  {
+    text: 'Users',
+    icon: 'user',
+    path: '',
+    items: [
+      {
+        text: 'User List',
+        path: '/users',
+      }
+    ],
+  },
 ];

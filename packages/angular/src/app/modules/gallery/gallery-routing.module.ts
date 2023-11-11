@@ -1,28 +1,27 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
 import {
   LoginFormComponent,
   ResetPasswordFormComponent,
   CreateAccountFormComponent,
   ChangePasswordFormComponent,
-} from '../components';
-import { AuthGuardService } from '../services';
+} from '../../components';
+import { AuthGuardService } from '../../services';
 
-import { SideNavOuterToolbarComponent, UnauthenticatedContentComponent } from '../layouts';
+import { SideNavOuterToolbarComponent, UnauthenticatedContentComponent } from '../../layouts';
 
-import { CrmContactListComponent } from '../pages/crm-contact-list/crm-contact-list.component';
-import { CrmContactDetailsComponent } from '../pages/crm-contact-details/crm-contact-details.component';
-import { PlanningTaskListComponent } from '../pages/planning-task-list/planning-task-list.component';
-import { PlanningTaskDetailsComponent } from '../pages/planning-task-details/planning-task-details.component';
-import { AnalyticsDashboardComponent } from '../pages/analytics-dashboard/analytics-dashboard.component';
-import { AnalyticsSalesReportComponent } from '../pages/analytics-sales-report/analytics-sales-report.component';
-import { AnalyticsGeographyComponent } from '../pages/analytics-geography/analytics-geography.component';
-import { PlanningSchedulerComponent } from '../pages/planning-scheduler/planning-scheduler.component';
-import { AppSignInComponent } from '../pages/sign-in-form/sign-in-form.component';
-import { AppSignUpComponent } from '../pages/sign-up-form/sign-up-form.component';
-import { AppResetPasswordComponent } from '../pages/reset-password-form/reset-password-form.component';
-import { UserProfileComponent } from '../pages/user-profile/user-profile.component';
+import { CrmContactListComponent } from '../../pages/crm-contact-list/crm-contact-list.component';
+import { CrmContactDetailsComponent } from '../../pages/crm-contact-details/crm-contact-details.component';
+import { PlanningTaskListComponent } from '../../pages/planning-task-list/planning-task-list.component';
+import { PlanningTaskDetailsComponent } from '../../pages/planning-task-details/planning-task-details.component';
+import { AnalyticsDashboardComponent } from '../../pages/analytics-dashboard/analytics-dashboard.component';
+import { AnalyticsSalesReportComponent } from '../../pages/analytics-sales-report/analytics-sales-report.component';
+import { AnalyticsGeographyComponent } from '../../pages/analytics-geography/analytics-geography.component';
+import { PlanningSchedulerComponent } from '../../pages/planning-scheduler/planning-scheduler.component';
+import { AppSignInComponent } from '../../pages/sign-in-form/sign-in-form.component';
+import { AppSignUpComponent } from '../../pages/sign-up-form/sign-up-form.component';
+import { AppResetPasswordComponent } from '../../pages/reset-password-form/reset-password-form.component';
+import { UserProfileComponent } from '../../pages/user-profile/user-profile.component';
 
 const routes: Routes = [
   {
@@ -128,8 +127,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes),
-    BrowserModule,
+    RouterModule.forChild(routes)
   ],
   providers: [AuthGuardService],
   exports: [RouterModule],

@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  api: 'https://localhost:44383/api/v1',
+  odata: 'https://localhost:44383/odata'
 };
 
 /*

@@ -20,7 +20,7 @@ export const defaultUser: IUser = {
   avatarUrl: 'https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/01.png',
 };
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class AuthService {
   private _user: IUser | null = defaultUser;
 
