@@ -1,13 +1,40 @@
-import { Component } from "@angular/core";
-import DataSource from "devextreme/data/data_source";
+import { Component, inject } from "@angular/core";
 import { DatagridDirective } from "../../shared/directives/datagrid.directive";
+import { DatagridOptions } from "../../shared/types/datagrid";
+import { UserService } from "../users.service";
 
 @Component({
-	selector: 'fs-datagrid',
-	template: '<p>user-list works!</p>'
+	selector: 'fs-user-list',
+	templateUrl: './user-list.component.html'
 })
 export class UserListComponent implements DatagridDirective {
-    dataSource: DataSource;
-    
-    constructor() {}
+    service: UserService = inject(UserService);
+    options: DatagridOptions = {
+        title: "Users",
+        dataSource: this.service.GetODataStore(),
+        columns: [
+            { field: "Id" },
+            { field: "Email" },
+            { field: "Name" }
+        ],
+        items: [{
+            location: "after",
+            locateInMenu: true,
+            type: "button",
+            icon: "plus",
+            text: "Add User",
+            onClick: () => {
+                this.isAddUserPopupOpened = true;
+            }
+        },
+        ]
+    }
+
+    isAddUserPopupOpened = false;
+    onClickSaveNewUser = async () => {
+        await this.service.Post({
+            name: "Test",
+            email: "test@gmail.com"
+        });
+    };
 }

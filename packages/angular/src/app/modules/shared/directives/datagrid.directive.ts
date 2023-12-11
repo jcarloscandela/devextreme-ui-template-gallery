@@ -1,9 +1,9 @@
 import { Directive } from "@angular/core";
-import DataSource from "devextreme/data/data_source";
+import { DatagridOptions } from "../types/datagrid";
 
 @Directive()
 export abstract class DatagridDirective {
-    abstract dataSource: DataSource;
+    abstract options: DatagridOptions;
     
     constructor() {}
 }

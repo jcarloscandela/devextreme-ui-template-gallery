@@ -1,4 +1,24 @@
-<dx-data-grid
-    [dataSource]="dataSource">
+<dx-toolbar>
+    <dxi-item location="before">
+        <span class="toolbar-header">{{ options.title }}</span>
+    </dxi-item>
+    <dxi-item *ngFor="let item of options.items" [location]="item.location" [locateInMenu]="item.locateInMenu">
+        <dx-button *ngIf="item.type === 'button'" [icon]="item.icon" [text]="item.text" type="default"
+            stylingMode="contained" (onClick)="item.onClick()"></dx-button>
 
+    </dxi-item>
+    <dxi-item location="after" locateInMenu="auto" widget="dxButton" showText="inMenu" [options]="{
+          text: 'Refresh',
+          icon: 'refresh',
+          onClick: refresh,
+          stylingMode: 'text'
+        }"></dxi-item>
+</dx-toolbar>
+<dx-data-grid #dataGrid [dataSource]="options.dataSource">
+    <ng-container *ngFor="let column of options.columns">
+        <dxi-column [dataField]="column.field" caption="{{column.caption ? column.caption : column.field}}"
+            [visible]="column.visible ? column.visible : true">
+        </dxi-column>
+    </ng-container>
+    <dxo-paging *ngIf="options.pageSize" [(pageSize)]="options.pageSize"></dxo-paging>
 </dx-data-grid>

@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { DxDataGridModule } from 'devextreme-angular';
+import { DxButtonModule, DxDataGridModule, DxToolbarModule } from 'devextreme-angular';
 import { DatagridComponent } from './components/datagrid/datagrid.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [DatagridComponent],
-    imports: [ DxDataGridModule ],
+    imports: [ CommonModule, DxDataGridModule, DxToolbarModule, DxButtonModule ],
     exports: [ DatagridComponent],
     providers: [],
 })
